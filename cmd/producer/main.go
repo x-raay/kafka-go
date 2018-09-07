@@ -6,7 +6,6 @@ import (
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 
 	"github.com/Shopify/sarama"
-	"encoding/json"
 )
 
 var (
@@ -30,9 +29,15 @@ func main() {
 			panic(err)
 		}
 	}()
+
+	var jsonByteArray = []byte(`[
+        {"Name": "Ji Wei", "Order": 1},
+        {"Name": "Yun Jia Li", "Order": 3}
+	]`)
+
 	msg := &sarama.ProducerMessage{
 		Topic: *topic,
-		Value: sarama.StringEncoder("Something Cool 2"),
+		Value: sarama.ByteEncoder(jsonByteArray),
 	}
 	partition, offset, err := producer.SendMessage(msg)
 	if err != nil {
