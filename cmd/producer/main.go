@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	brokerList = kingpin.Flag("brokerList", "List of brokers to connect").Default("localhost:9092").Strings()
+	brokerList = kingpin.Flag("brokerList", "List of brokers to connect").Default("192.168.1.51:9092").Strings()
 	topic      = kingpin.Flag("topic", "Topic name").Default("important").String()
 	maxRetry   = kingpin.Flag("maxRetry", "Retry limit").Default("5").Int()
 )

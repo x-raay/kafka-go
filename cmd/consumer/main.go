@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	brokerList        = kingpin.Flag("brokerList", "List of brokers to connect").Default("localhost:9092").Strings()
+	brokerList        = kingpin.Flag("brokerList", "List of brokers to connect").Default("192.168.1.51:9092").Strings()
 	topic             = kingpin.Flag("topic", "Topic name").Default("important").Strings()
 	partition         = kingpin.Flag("partition", "Partition number").Default("0").String()
 	offsetType        = kingpin.Flag("offsetType", "Offset Type (OffsetNewest | OffsetOldest)").Default("-1").Int()
