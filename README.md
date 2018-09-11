@@ -18,4 +18,8 @@ How to Run producer & consumer?
 1. start the consumer : docker run k_consumer
 2. start the producer : docker run k_producer
 
+To see the available options, pass arguments to your docker command as shown 
+
+sudo docker run k_producer --help
+
 ```
